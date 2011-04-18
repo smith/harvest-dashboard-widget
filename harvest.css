@@ -1,0 +1,495 @@
+body {
+    margin: 0;
+    font: 10px normal; font-family: "Lucida Grande";
+    color: #fff;
+}
+
+#widgetBody {
+    z-index: 9999;
+}
+
+#harvestLink {
+    position: absolute;
+    top: 6px;
+    left: 210px;
+    height: 15px;
+    width: 50px;
+    cursor: pointer;
+}
+
+#dateToday {
+    position: absolute;
+    top: 9px;
+    left: 15px;
+    font-weight: bold;
+    color: #216271;
+    text-transform: uppercase;
+}
+
+#totalToday {
+    position: absolute;
+    bottom: 21px;
+    right: 29px;
+    text-align: right;
+    font-weight: bold;
+    color: #2a6777;
+}
+
+#projectDisplay {
+    position: absolute;
+    top: 35px;
+    left: 15px;
+    font-weight: bold;
+}
+
+#taskDisplay {
+    position: absolute;
+    top: 50px;
+    left: 15px;
+    font-weight: bold;
+}
+
+#timeDisplay {
+    position: absolute;
+    top: 35px;
+    left: 165px;
+    font: 24px normal; font-family: "Lucida Grande";
+    width: 70px;
+    text-align: right;
+    color: #699ba7;
+    border: 0px solid #c00;
+}
+
+.seconds {
+    font-size: 16px;
+    color: #999;
+}
+
+/***************************/
+/* Player Controls         */
+/***************************/
+
+#playPauseButton
+{
+    position: absolute;
+    left: 238px;
+    top: 38px;
+    width: 23px;
+    height: 23px;
+    background-repeat: no-repeat;
+    background-image: url(Images/button-play.png);
+    -apple-dashboard-region: dashboard-region(control circle);
+}
+
+#plusMinusButton
+{
+    position: absolute;
+    bottom: 18px; /* 239px; */
+    left: 25px;
+    height: 17px;
+    width: 18px;
+    background-image: url(Images/button-plus.png);
+}
+
+#networkStatus
+{
+    position:absolute;
+    bottom: 19px;
+    height:16px;
+    width:16px;
+    left:50px;
+    display:none;
+    background: url(Images2/1.png) no-repeat 0 0;
+}
+
+#networkStatusErrorText
+{
+    position:absolute;
+    left:70px;
+    bottom: 13px;
+    height:20px;
+    color: #333333;
+    display:block;
+    font: 10px normal; font-family: "Lucida Grande";
+}
+
+/***************************/
+/* Toggle Drawer       */
+/***************************/
+
+#toggleDrawerContainer
+{
+    position: absolute;
+    top: 75px;
+    left: 0px;
+    width: 279px;
+}
+
+.drawerTop
+{
+    width:279px;
+    height:29px;
+    background:url(Images/drawer-top.png) no-repeat top left;
+}
+
+.drawerRow
+{
+    margin-left: 8px;
+    width: 260px;
+    height: 27;
+    background:url(Images/drawer-row.png) no-repeat top left;
+}
+
+.drawerBottom
+{
+    margin-left: 8px;
+    width: 260px;
+    height: 41px;
+    background:url(Images/drawer-bottom.png) no-repeat top left;
+}
+
+#timerTable {
+    position: absolute;
+    width: 233px;
+    left: 22px;
+    top: 78px;
+    font-size: 10px;
+     color: #316d81;
+}
+
+#timerTable tr {
+
+}
+
+
+
+#timerTable div.pencilImage {
+    opacity:.7;
+    width:16px;
+    height:16px;
+    margin-left:4px;
+    background:url(Images2/rollie_pencil.png) no-repeat top left;
+    -apple-dashboard-region: dashboard-region(control circle);
+}
+
+#timerTable div.pencilImage2:hover {
+    opacity:.7;
+    width:16px;
+    height:16px;
+    margin-left:4px;
+    background:url(Images2/rollie_pencil_down.png) no-repeat top left;
+    -apple-dashboard-region: dashboard-region(control circle);
+}
+
+#timerTable div.pencilImage2:active {
+    opacity:.7;
+    width:16px;
+    height:16px;
+    margin-left:4px;
+    background:url(Images2/rollie_pencil_over.png) no-repeat top left;
+    -apple-dashboard-region: dashboard-region(control circle);
+}
+
+#timerTable td.projecttask {
+  padding: 7px 0 8px 5px;
+  width: 190px;
+  border-right: 0px solid #dadabd;
+  cursor: pointer;
+}
+
+#timerTable td.projecttask_selected {
+  padding: 7px 0 8px 5px;
+  width: 190px;
+  border-right: 0px solid #dadabd;
+  background: #c5ecf9;
+}
+
+#timerTable td.hours {
+  padding: 7px 5px 8px 0px;
+  text-align: right;
+  cursor: pointer;
+}
+
+#timerTable td.hours_selected {
+  padding: 7px 0 8px 5px;
+  text-align: right;
+  border: 0px solid #cc0000;
+}
+
+
+/***************************/
+/* Form Entry Drawer       */
+/***************************/
+
+#viewPort
+{
+    display: none;
+    position: absolute;
+    top: 75px;
+    height: 165px;
+    left: 8px;
+    width: 260px;
+    overflow: hidden;
+}
+
+#formDrawer
+{
+    position: absolute;
+    top: -165px;
+    left: 0px;
+    width: 260px;
+    z-index:100;
+}
+
+#projectInput
+{
+    position: absolute;
+    top: 9px;
+    left: 58px;
+    width: 183px;
+    opacity: 0.0;
+}
+
+#projectInputText
+{
+    position: absolute;
+    top: 14px;
+    left: 63px;
+    width: 164px;
+    white-space: nowrap;
+    overflow: hidden;
+    font-weight: bold;
+    color: #316d81;
+}
+
+#taskInput
+{
+    position: absolute;
+    top: 35px;
+    left: 58px;
+    width: 183px;
+    opacity: 0.0;
+}
+
+#taskInputText
+{
+    position: absolute;
+    top: 40px;
+    left: 63px;
+    width: 164px;
+    white-space: nowrap;
+    overflow: hidden;
+    font-weight: bold;
+    color: #316d81;
+}
+
+#notesInput
+{
+    position: absolute;
+    top: 62px;
+    left: 58px;
+    width: 183px;
+    font-weight: normal;
+    color: #316d81;
+     border: 0px;
+  height: 33px;
+}
+
+#hoursInput
+{
+    position: absolute;
+    top: 97px;
+    left: 58px;
+    width: 40px;
+    white-space: nowrap;
+    overflow: hidden;
+    font-weight: bold;
+    color: #316d81;
+    border: 0px;
+}
+
+#saveTimeButton {
+    position: absolute;
+    left: 56px;
+    top: 123px;
+    width: 45px;
+    height: 23px;
+    background-repeat: no-repeat;
+    background-image: url(Images/button-save.png);
+}
+
+#cancelTimeButton {
+    position: absolute;
+    left: 100px;
+    top: 123px;
+    width: 59px;
+    height: 23px;
+    background-repeat: no-repeat;
+    background-image: url(Images/button-cancel.png);
+}
+
+/***************************/
+/* Essentials              */
+/***************************/
+.flip {
+    position: absolute;
+    top: 57px;
+    left: 252px;
+    width: 13px;
+    height: 13px;
+        background;
+}
+#flip {
+    opacity: .25;
+    background: url(file:///System/Library/WidgetResources/ibutton/white_i.png) no-repeat top left;
+    z-index: 8000;
+}
+#fliprollie {
+    display: none;
+    opacity: 0.25;
+    background: url(file:///System/Library/WidgetResources/ibutton/white_rollie.png) no-repeat top left;
+    z-index: 7999;
+}
+
+/***************************/
+/* Back Side               */
+/***************************/
+#back {
+
+  display: none;
+    width: 278px;
+    height: 221px;
+    background: url(Images/panel-back.png) no-repeat top left;
+    position: relative;
+    font: bold 10px; font-family: "Lucida Grande";
+    color: #fff;
+    padding: 0 18px;
+}
+
+#harvestLogo {
+    position: absolute;
+    left: 73px;
+    top: 20px;
+    width: 134px;
+    height: 29px;
+    background-image: url(Images/harvest-logo.png);
+    background-repeat: no-repeat;
+}
+
+#prefs {
+    position: absolute;
+    left: 20px;
+    top: 82px;
+    border: 0px solid #c00;
+    width: 233px;
+    height: 69px;
+    background: url(Images/panel-back-form-labels.png?v=2);
+    background-repeat: no-repeat;
+}
+
+#back #prefURL {
+  width: 74px;
+  position: absolute;
+  left: 65px;
+    top: -7px;
+}
+
+#back #prefEmail {
+  width: 135px;
+  position: absolute;
+  left: 65px;
+    top: 22px;
+}
+
+#back #prefPassword {
+  width: 135px;
+  position: absolute;
+  left: 65px;
+    top: 52px;
+}
+
+#backDone {
+    position:absolute;
+    bottom:31px;
+    left:82px;
+    line-height: 14px;
+}
+
+#backDone img {
+  vertical-align: bottom;
+}
+
+#backCancel {
+    position:absolute;
+    bottom:31px;
+    left:135px;
+    line-height: 14px;
+}
+
+#backAjaxMsg {
+    position: absolute;
+    bottom: 150px;
+    left: 30px;
+    text-align:center;
+    width:220px;
+}
+
+.timerRunning {
+    color: white; /* #dadabd; */
+}
+
+.inactive {
+    color: #ccc;
+}
+
+a {
+    color: #efefef;
+}
+
+.newVersionDiv {
+    position:absolute;
+    z-index:100;
+    width: 94px;
+    height: 18px;
+    display:none;
+    top:110px;
+    left:90px;
+    background-repeat: no-repeat;
+    background-image: url(Images/update_white.png);
+    -apple-dashboard-region: dashboard-region(control rectangle);
+}
+
+.newVersionDiv:hover {
+    background-image: url(Images/update_white_over.png);
+}
+
+.newVersionDiv:active {
+    background-image: url(Images/update_white_down.png);
+}
+
+#newVersionDivBack {
+    z-index:100;
+    top:55px;
+    left:90px;
+}
+
+/***************************/
+/* Debug                   */
+/***************************/
+#debugDiv {
+    border-style: dotted;
+    border-color: black;
+    background: gray;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 200px;
+    width: 90%;
+    overflow: scroll;
+    display:none;
+}
+
+
+
+
+
