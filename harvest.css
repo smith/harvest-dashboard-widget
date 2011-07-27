@@ -8,7 +8,7 @@ body {
     z-index: 9999;
 }
 
-#harvestLink {
+.harvestLink {
     position: absolute;
     top: 6px;
     left: 210px;
@@ -444,33 +444,6 @@ body {
 
 a {
     color: #efefef;
-}
-
-.newVersionDiv {
-    position:absolute;
-    z-index:100;
-    width: 94px;
-    height: 18px;
-    display:none;
-    top:110px;
-    left:90px;
-    background-repeat: no-repeat;
-    background-image: url(Images/update_white.png);
-    -apple-dashboard-region: dashboard-region(control rectangle);
-}
-
-.newVersionDiv:hover {
-    background-image: url(Images/update_white_over.png);
-}
-
-.newVersionDiv:active {
-    background-image: url(Images/update_white_down.png);
-}
-
-#newVersionDivBack {
-    z-index:100;
-    top:55px;
-    left:90px;
 }
 
 /***************************/
