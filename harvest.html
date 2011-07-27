@@ -1,113 +1,86 @@
+<!doctype html>
 <html>
 <head>
-<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-<style type="text/css">
-    @import "harvest.css";
-</style>
-
-<!-- The JavaScript file contains the logic needed for this widget -->
-<script type='text/javascript' src='/System/Library/WidgetResources/AppleClasses/AppleAnimator.js' charset='utf-8'/>
-<script type='text/javascript' src='/System/Library/WidgetResources/AppleClasses/AppleButton.js' charset='utf-8'/>
-<script type='text/javascript' src='js/fader.js' charset='utf-8'/>
-<script type="text/javascript" src="js/json.js" charset="utf-8" /></script>
-<script type='text/javascript' src='js/prototype.js' charset='utf-8'/>
-<script type='text/javascript' src='js/harvest.js' charset='utf-8'/>
-
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="harvest.css" />
+  <script src="/System/Library/WidgetResources/AppleClasses/AppleAnimator.js"></script>
+  <script src="/System/Library/WidgetResources/AppleClasses/AppleButton.js"></script>
+  <script src="js/harvest.js"></script>
 </head>
-
-<body onload='initialize(event);toggleDebug();'>
-
-    <!-- the widget background -->
-
-    <div id="front">
-        <div id="widgetBody" onmousemove="handleMouseMove(event)" onmouseout="handleMouseOut(event)">
-        <div id="newVersionDiv" class="newVersionDiv" onClick="widget.openURL('http://www.getharvest.com/widget');"></div>
-          <img src="Images/main-body.png" />
-            <!-- widget header displays -->
-            <div id="dateToday">DATE</div>
-            <div id="harvestLink" onclick='goToHarvest()'></div>
-
-            <!-- current timer details -->
-            <div id="projectDisplay"><span class="inactive">Client - Project</span></div>
-            <div id="taskDisplay"><span class="inactive">Task</span></div>
-            <div id="timeDisplay">0.00</div>
-
-            <!-- current timer controls -->
-            <div id="playPauseButton" onclick="handlePlayPauseClick();"></div>
-
-            <!-- flipper stuff -->
-            <div class='flip' id='flip' onclick='showBack(event)' onmouseover='enterFlip(event)' onmouseout='exitFlip(event)'></div>
-            <div class='flip' id='fliprollie'></div>
-
-            <!-- clickable tasks from today -->
-            <div id="todaysTasks"></div>
-        </div>
-
-        <!-- toggle timer view -->
-        <div id="toggleDrawerContainer">
-            <div class="drawerTop"></div>
-            <div class="drawerBottom">
-                <div id="totalToday">0.00</div>
-                <div id="plusMinusButton" onclick="handlePlusMinusClick();"></div>
-            </div>
-        </div>
-        <table id="timerTable" cellspacing='0' cellpadding='0'>
-            <tbody id='tbody'>
-                <tr><td colspan="3" class="projecttask">No entries today.</td></tr>
-            </tbody>
-        </table>
-
-        <!-- start timer view -->
-        <div id="viewPort">
-            <div id="formDrawer">
-                <img src="Images/drawer-form.png" />
-
-                <!-- Project and task selectors -->
-                <div id="projectInputText" class="entryInput">Yo! There</div>
-                <select id="projectInput" onchange="handleProjectInputChange()">
-                    <option>Project 1</option>
-                    <option>Project 2</option>
-                    <option>Project 3</option>
-                </select>
-                <div id="taskInputText" class="entryInput">Design Work!</div>
-                <select id="taskInput" onchange="handleTaskInputChange()">
-                    <option>Task 1</option>
-                    <option>Task 2</option>
-                    <option>Task 3</option>
-                </select>
-
-                <!-- note input -->
-                <textarea id="notesInput" class="entryInput" onkeydown="checkEnterSubmit(event);"></textarea>
-
-                <!-- hours input -->
-                <input type="text" id="hoursInput" size="5" maxlength="10" onkeydown="checkEnterSubmit(event);">
-
-                <!-- submit/cancel buttons -->
-                <div id="saveTimeButton" onclick="handleSaveTimeClick();"></div>
-                <div id="cancelTimeButton" onclick="handleCancelTimeClick();"></div>
-            </div>
-        </div>
+<body>
+  <!-- the widget background -->
+  <div id="front">
+    <div id="widgetBody">
+      <div id="newVersionDiv" class="newVersionDiv"></div>
+      <img src="Images/main-body.png" />
+      <!-- widget header displays -->
+      <div id="dateToday">DATE</div>
+      <div id="harvestLink"></div>
+      <!-- current timer details -->
+      <div id="projectDisplay"><span class="inactive">Client - Project</span></div>
+      <div id="taskDisplay"><span class="inactive">Task</span></div>
+      <div id="timeDisplay">0.00</div>
+      <!-- current timer controls -->
+      <div id="playPauseButton"></div>
+      <!-- flipper stuff -->
+      <div class='flip' id='flip'></div>
+      <div class='flip' id='fliprollie'></div>
+      <!-- clickable tasks from today -->
+      <div id="todaysTasks"></div>
     </div>
-
-    <div id="back">
-        <div id="newVersionDivBack" class="newVersionDiv" onClick="widget.openURL('http://www.getharvest.com/widget');"></div>
-        <!-- Harvest back URLs -->
-        <div id="harvestLogo" onclick=""></div>
-        <div id="prefs">
-            <input type="text" id="prefURL" />
-            <input type="text" id="prefEmail" />
-            <input type="password" id="prefPassword" />
+    <!-- toggle timer view -->
+    <div id="toggleDrawerContainer">
+      <div class="drawerTop"></div>
+      <div class="drawerBottom">
+        <div id="totalToday">0.00</div>
+        <div id="plusMinusButton"></div>
       </div>
-        <div id="backDone"></div>
-        <div id="backCancel"></div>
-        <div id="backAjaxMsg"></div>
     </div>
-
-    <div id='debugDiv'></div>
+    <table id="timerTable" cellspacing='0' cellpadding='0'>
+      <tbody id='tbody'>
+        <tr><td colspan="3" class="projecttask">No entries today.</td></tr>
+      </tbody>
+    </table>
+    <!-- start timer view -->
+    <div id="viewPort">
+      <div id="formDrawer">
+        <img src="Images/drawer-form.png" />
+        <!-- Project and task selectors -->
+        <div id="projectInputText" class="entryInput">Yo! There</div>
+        <select id="projectInput">
+          <option>Project 1</option>
+          <option>Project 2</option>
+          <option>Project 3</option>
+        </select>
+        <div id="taskInputText" class="entryInput">Design Work!</div>
+        <select id="taskInput">
+          <option>Task 1</option>
+          <option>Task 2</option>
+          <option>Task 3</option>
+        </select>
+        <!-- note input -->
+        <textarea id="notesInput" class="entryInput"></textarea>
+        <!-- hours input -->
+        <input type="text" id="hoursInput" size="5" maxlength="10">
+        <!-- submit/cancel buttons -->
+        <div id="saveTimeButton"></div>
+        <div id="cancelTimeButton"></div>
+      </div>
+    </div>
+  </div>
+  <div id="back">
+    <div id="newVersionDivBack" class="newVersionDiv"></div>
+    <!-- Harvest back URLs -->
+    <div id="harvestLogo" onclick=""></div>
+    <div id="prefs">
+      <input type="text" id="prefURL" />
+      <input type="text" id="prefEmail" />
+      <input type="password" id="prefPassword" />
+    </div>
+    <div id="backDone"></div>
+    <div id="backCancel"></div>
+    <div id="backAjaxMsg"></div>
+  </div>
+  <div id='debugDiv'></div>
 </body>
-
 </html>
-
-
-
-
