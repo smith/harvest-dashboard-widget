@@ -5,13 +5,13 @@
 	<key>CFBundleDisplayName</key>
 	<string>Harvest Timer</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.harvestapp.widget.timer</string>
+	<string>com.harvestapp.widget.timer2</string>
 	<key>CFBundleName</key>
 	<string>Harvest Timer</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>2.0</string>
 	<key>CFBundleVersion</key>
-	<string>1.0</string>
+	<string>2.0</string>
 	<key>CloseBoxInsetX</key>
 	<integer>5</integer>
 	<key>CloseBoxInsetY</key>
